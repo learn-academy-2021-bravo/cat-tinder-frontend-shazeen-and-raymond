@@ -1,0 +1,9 @@
+.footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.kitty-footer {
+  width: 50px;
+  margin: 2% 3%;
+}
