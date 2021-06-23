@@ -16,6 +16,7 @@ export default class CatIndex extends Component {
               </NavLink>
             );
           })}
+        <NavLink to="/catnew">Create a new cat</NavLink>
       </div>
     );
   }

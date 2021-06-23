@@ -43,8 +43,8 @@ export default class App extends Component {
                   return <CatShow cat={cat} />;
                 }}
               />
-              <Route path="catnew" component={CatNew} />
-              <Route path="catedit/:id" component={CatEdit} />
+              <Route path="/catnew" component={CatNew} />
+              <Route path="/catedit/:id" component={CatEdit} />
               <Route component={NotFound} />
             </Switch>
           </section>
