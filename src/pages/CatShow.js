@@ -1,9 +1,19 @@
-import React from 'react'
+import React, { Component } from "react";
 
-export default function CatShow() {
+export default class CatShow extends Component {
+  render() {
     return (
-        <div>
-            <h1>Cat Show</h1>
-        </div>
-    )
+      <div className="main-containers">
+        <h1>Cat Info</h1>
+        {
+        this.props.cat && <>
+        <h2>{this.props.cat.name}</h2>
+        <p>{this.props.cat.age}</p>
+        <p>{this.props.cat.enjoys}</p>
+        </>
+       }
+      </div>
+      
+    );
+  }
 }
