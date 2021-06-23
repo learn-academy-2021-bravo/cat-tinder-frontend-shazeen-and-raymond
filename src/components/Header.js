@@ -8,10 +8,8 @@ import {
   NavbarToggler,
   Collapse,
 } from "reactstrap";
-
 const Header = (props) => {
   const [isOpen, setIsOpen] = useState(false);
-
   const toggle = () => setIsOpen(!isOpen);
   return (
     <div>
@@ -32,5 +30,4 @@ const Header = (props) => {
     </div>
   );
 };
-
 export default Header;
