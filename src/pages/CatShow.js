@@ -1,9 +1,11 @@
-import React from 'react'
+import React, { Component } from "react";
 
-export default function CatShow() {
+export default class CatShow extends Component {
+  render() {
     return (
-        <div>
-            <h1>Cat Show</h1>
-        </div>
-    )
+      <div className="main-containers">
+        <h1>{this.props.cat.name}</h1>
+      </div>
+    );
+  }
 }
