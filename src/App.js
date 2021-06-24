@@ -25,6 +25,12 @@ export default class App extends Component {
   createCat = (catForm) => {
     console.log(catForm);
   };
+
+  updateCat = (cat, id) => {
+    console.log("cat:", cat);
+    console.log("id:", id);
+  };
+
   render() {
     return (
       <div className="app">
@@ -51,7 +57,14 @@ export default class App extends Component {
                   return <CatNew createCat={this.createCat} />;
                 }}
               />
-              <Route path="/catedit/:id" component={CatEdit} />
+              <Route
+                path="/catedit/:id"
+                render={(props) => {
+                  let id = props.match.params.id;
+                  let cat = this.state.cats.find((cat) => cat.id === +id);
+                  return <CatEdit updateCat={this.updateCat} cat={cat} />;
+                }}
+              />
               <Route component={NotFound} />
             </Switch>
           </section>
