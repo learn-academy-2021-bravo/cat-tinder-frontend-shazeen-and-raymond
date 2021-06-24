@@ -4,7 +4,6 @@ import { NavLink } from "react-router-dom";
 export default class CatIndex extends Component {
   render() {
     const { cats } = this.props;
-    console.log(cats);
     return (
       <div className="main-containers">
         <h1>All the cats</h1>
@@ -16,6 +15,7 @@ export default class CatIndex extends Component {
               </NavLink>
             );
           })}
+        <NavLink to="/catnew">Create a new cat</NavLink>
       </div>
     );
   }

@@ -22,8 +22,10 @@ export default class App extends Component {
       cats: mockcats,
     };
   }
+  createCat = (catForm) => {
+    console.log(catForm);
+  };
   render() {
-    console.log(this.state.cats);
     return (
       <div className="app">
         <Router>
@@ -43,8 +45,13 @@ export default class App extends Component {
                   return <CatShow cat={cat} />;
                 }}
               />
-              <Route path="catnew" component={CatNew} />
-              <Route path="catedit/:id" component={CatEdit} />
+              <Route
+                path="/catnew"
+                render={(props) => {
+                  return <CatNew createCat={this.createCat} />;
+                }}
+              />
+              <Route path="/catedit/:id" component={CatEdit} />
               <Route component={NotFound} />
             </Switch>
           </section>
