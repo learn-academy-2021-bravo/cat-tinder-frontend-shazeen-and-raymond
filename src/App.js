@@ -13,17 +13,51 @@ import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
 //Mock Cat data
-import mockcats from "./mockCats";
+// import mockcats from "./mockCats";
 
 export default class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      cats: mockcats,
+      cats: [],
     };
   }
-  createCat = (catForm) => {
-    console.log(catForm);
+
+  componentDidMount() {
+    this.readCat();
+  }
+
+  readCat = () => {
+    fetch("http://localhost:3000/cats")
+      .then((res) => res.json())
+      .then((payload) => {
+        console.log(payload);
+        this.setState({ cats: payload });
+      })
+      .catch((errors) => {
+        console.log("read errors:", errors);
+      });
+  };
+
+  createCat = (catObj) => {
+    return fetch("http://localhost:3000/cats", {
+      body: JSON.stringify(catObj),
+      headers: {
+        "Content-Type": "application/json",
+      },
+      method: "POST",
+    })
+      .then((res) => {
+        if (res.status === 422) {
+          console.log("Please check your submission.");
+        } else {
+          return res.json();
+        }
+      })
+      .then((payload) => this.readCat())
+      .catch((errors) => {
+        console.log("create errors:", errors);
+      });
   };
 
   updateCat = (cat, id) => {
