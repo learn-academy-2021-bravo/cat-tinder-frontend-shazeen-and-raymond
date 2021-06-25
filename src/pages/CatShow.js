@@ -3,6 +3,11 @@ import { NavLink } from "react-router-dom";
 import { Button } from "reactstrap";
 
 export default class CatShow extends Component {
+  handleDelete = () => {
+    this.props.deleteCat(this.props.cat.id)
+  }
+
+
   render() {
     return (
       <div className="main-containers">
@@ -16,6 +21,9 @@ export default class CatShow extends Component {
         )}
         <NavLink to={`/catedit/${this.props.cat.id}`}>
           <Button color="secondary">Edit Cat Profile</Button>
+        </NavLink>
+        <NavLink to="/catindex">
+          <Button onClick= {this.handleDelete} color="danger">Delete Cat Profile</Button>
         </NavLink>
       </div>
     );
