@@ -12,8 +12,6 @@ import CatShow from "./pages/CatShow";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
 
-//Mock Cat data
-// import mockcats from "./mockCats";
 
 export default class App extends Component {
   constructor(props) {

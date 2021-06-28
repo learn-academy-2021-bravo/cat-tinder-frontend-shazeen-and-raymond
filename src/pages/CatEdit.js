@@ -31,6 +31,7 @@ export default class CatNew extends Component {
     return (
       <div className="main-containers">
         <h1>Edit Cat New</h1>
+        <div className="edit-form">
         <Form>
           <FormGroup>
             <Label for="name">Cat's Name</Label>
@@ -65,11 +66,12 @@ export default class CatNew extends Component {
               value={this.state.form.enjoys}
             />
           </FormGroup>
-          <Button onClick={this.handleSubmit}>Submit</Button>
+          <Button outline color="success" onClick={this.handleSubmit}>Submit</Button>
         </Form>
+        </div>
         {this.state.submitted && (
           <Redirect to={`/catshow/${this.props.cat.id}`} />
-        )}
+        )} 
       </div>
     );
   }
