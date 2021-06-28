@@ -4,9 +4,8 @@ import { Button } from "reactstrap";
 
 export default class CatShow extends Component {
   handleDelete = () => {
-    this.props.deleteCat(this.props.cat.id)
-  }
-
+    this.props.deleteCat(this.props.cat.id);
+  };
 
   render() {
     return (
@@ -23,7 +22,9 @@ export default class CatShow extends Component {
           <Button color="secondary">Edit Cat Profile</Button>
         </NavLink>
         <NavLink to="/catindex">
-          <Button onClick= {this.handleDelete} color="danger">Delete Cat Profile</Button>
+          <Button onClick={this.handleDelete} color="danger">
+            Delete Cat Profile
+          </Button>
         </NavLink>
       </div>
     );

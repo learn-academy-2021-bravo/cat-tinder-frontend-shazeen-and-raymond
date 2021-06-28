@@ -1,0 +1,20 @@
+.cat-card {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+}
+
+.row {
+  padding: 2%;
+  margin: 2%;
+}
+
+.catindex-title {
+  text-align: center;
+}
+
+.createnewcat {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
