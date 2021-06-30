@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import { Card, Button, CardTitle, Row, Col } from "reactstrap";
 
 //import catLogo from "../assets/cat-logo.png";
-import "./catIndex.css";
+import "./styles/catIndex.css";
 
 export default class CatIndex extends Component {
   render() {

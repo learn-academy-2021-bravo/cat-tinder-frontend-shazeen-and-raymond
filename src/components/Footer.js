@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./footer.css";
+import "./styles/footer.css";
 import kittyFooter from "../assets/kitty-footer.png";
 
 export default class Footer extends Component {

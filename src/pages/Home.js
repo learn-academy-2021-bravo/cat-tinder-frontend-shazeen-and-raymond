@@ -1,5 +1,5 @@
 import React from "react";
-import "./home.css";
+import "./styles/home.css";
 import { Jumbotron, Container, NavLink, Button } from "reactstrap";
 
 export default function Home() {
